@@ -16,19 +16,18 @@ class MyApp extends StatelessWidget {
           title: Text("Practice"),
         ),
         drawer: Drawer(
-
+          backgroundColor: Colors.white,
           shadowColor: Colors.black,
           elevation: 5,
-          surfaceTintColor: Colors.green,
           child: SingleChildScrollView(
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(12.0),
                   child: ListTile(
                     leading: CircleAvatar(
-                      backgroundColor: Colors.black.withAlpha(20),
+                      backgroundColor: Colors.yellow,
                       child: const Icon(Icons.person_2_outlined),
                     ),
                     title: Text("Hamaad Majeed",style: TextStyle(fontWeight: FontWeight.w900),),
@@ -55,6 +54,70 @@ class MyApp extends StatelessWidget {
                 Divider(
                   color: Colors.black.withAlpha(100),
                   height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Text("Left 5 days of free trail. Upgrade to for more features ",style: TextStyle(fontSize: 16),),
+                      SizedBox(height: 10,),
+                      SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            padding: EdgeInsetsGeometry.all(20),
+                            backgroundColor: Colors.white,
+                            foregroundColor: Colors.black,
+                            elevation: 2,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(5),
+                            ),
+                          ),
+                          icon: Icon(Icons.thunderstorm_outlined),
+                          label: Text("Upgrade to Pro",style: TextStyle(fontWeight: FontWeight.w900),),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+                Divider(
+                  color: Colors.black.withAlpha(100),
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      ListTile(
+                        leading: Icon(Icons.message_sharp),
+                        title: Text("Messages",style: TextStyle(fontWeight: FontWeight.w600),),
+                        trailing: Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.circular(12),
+                              border:Border.all(
+                                color: Colors.black.withAlpha(100),
+                              )
+                          ),
+                          child: const Text(
+                            '+8',
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      ListTile(
+                        leading: Icon(Icons.analytics_rounded),
+                        title: Text("Analytics",style: TextStyle(fontWeight: FontWeight.w600),),
+                      ),
+                      ListTile(),
+                    ],
+                  ),
                 )
               ],
             ),
