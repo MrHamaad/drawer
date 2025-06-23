@@ -58,7 +58,7 @@ class _MyAppState extends State<MyApp> {
                       child: const Icon(Icons.person_2_outlined),
                     ),
                     title: Text("Hamaad Majeed",style: TextStyle(fontWeight: FontWeight.w900),),
-                    subtitle: Text("Personal Account"),
+                    subtitle: Text("Flutter Developer"),
                     trailing: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                       decoration: BoxDecoration(
