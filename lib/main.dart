@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:practice/widgets/about.dart';
+import 'package:practice/widgets/home.dart';
+import 'package:practice/widgets/setting.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,6 +16,12 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   GlobalKey<ScaffoldState> globalKey=GlobalKey<ScaffoldState>();
   int index=0;
+  final List<Widget> pages = [
+    HomeWidget(),
+    AboutWidget(),
+    SettingsWidget(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -227,7 +236,7 @@ class _MyAppState extends State<MyApp> {
             ),
           ),
         ),
-        body: Center(child: Text("Center Widget"),),
+        body: pages[index],
         bottomNavigationBar:BottomNavigationBar(
           onTap: (value){
             setState(() {
