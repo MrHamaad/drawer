@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MyApp());
 }
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   MyApp({super.key});
-  GlobalKey<ScaffoldState> globalKey=new GlobalKey<ScaffoldState>();
 
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  GlobalKey<ScaffoldState> globalKey=GlobalKey<ScaffoldState>();
+  int index=0;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -15,7 +21,7 @@ class MyApp extends StatelessWidget {
         key: globalKey,
         appBar: AppBar(
           backgroundColor: Colors.green,
-          title: Text("Practice"),
+          title: Text("Bottom Navigation and Menu Drawer",style: TextStyle(color: Colors.white),),
           centerTitle: true,
           leading: IconButton(
             onPressed: (){
@@ -222,6 +228,28 @@ class MyApp extends StatelessWidget {
           ),
         ),
         body: Center(child: Text("Center Widget"),),
+        bottomNavigationBar:BottomNavigationBar(
+          onTap: (value){
+            setState(() {
+              index=value;
+            });
+          },
+            currentIndex: index,
+            items:[
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: "Home"
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.info_rounded),
+                  label: "About"
+              ),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.settings),
+                  label: "Setting"
+              ),
+            ]
+        )
       ),
     );
   }
