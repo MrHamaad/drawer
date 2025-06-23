@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.symmetric(vertical:10),
                   child: ListTile(
                     leading: CircleAvatar(
                       backgroundColor: Colors.yellow,
@@ -56,7 +56,7 @@ class MyApp extends StatelessWidget {
                   height: 10,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 10),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
@@ -88,7 +88,7 @@ class MyApp extends StatelessWidget {
                   height: 10,
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: const EdgeInsets.symmetric(vertical: 10,),
                   child: Column(
                     children: [
                       ListTile(
@@ -115,10 +115,18 @@ class MyApp extends StatelessWidget {
                         leading: Icon(Icons.analytics_rounded),
                         title: Text("Analytics",style: TextStyle(fontWeight: FontWeight.w600),),
                       ),
-                      ListTile(),
+                      ListTile(
+                        leading: Icon(Icons.api_rounded),
+                        title: Text("Api Dashboard",style: TextStyle(fontWeight: FontWeight.w600),),
+                      ),
                     ],
                   ),
-                )
+                ),
+                Divider(
+                  color: Colors.black.withAlpha(100),
+                  height: 10,
+                ),
+
               ],
             ),
           ),
