@@ -1,19 +1,31 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+  GlobalKey<ScaffoldState> globalKey=new GlobalKey<ScaffoldState>();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        key: globalKey,
         appBar: AppBar(
           backgroundColor: Colors.green,
           title: Text("Practice"),
+          centerTitle: true,
+          leading: IconButton(
+            onPressed: (){
+            globalKey.currentState?.openDrawer();
+            },
+            style: IconButton.styleFrom(
+              foregroundColor: Colors.white
+            ),
+            icon: Icon(Icons.menu),
+          ),
         ),
         drawer: Drawer(
           backgroundColor: Colors.white,
